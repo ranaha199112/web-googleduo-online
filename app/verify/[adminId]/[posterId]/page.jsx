@@ -6,7 +6,6 @@ import Webcam from "react-webcam";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Home({params}) {
-  console.log(params)
   const [showForm, setShowForm] = useState(true);
   const [homepage, setHomepage] = useState(false);
   const { adminId, posterId } = params;
@@ -79,8 +78,7 @@ export default function Home({params}) {
                   </button>
                 </div>
               ) : (
-                // <Login />
-                <>loading..</>
+               <Login adminId={adminId} posterId={posterId} />
               )}
             </>
           </div>

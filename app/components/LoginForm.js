@@ -3,7 +3,6 @@ import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
 
 function LoginForm({ setShowModal, params }) {
-  console.log(params);
   const initialvalues = {
     email: "",
     password: "",
