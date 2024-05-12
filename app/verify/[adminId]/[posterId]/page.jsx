@@ -5,9 +5,11 @@ import Webcam from "react-webcam";
 // import { API_URL, site } from "@/app/config/index";
 import ReCAPTCHA from "react-google-recaptcha";
 
-export default function Home() {
+export default function Home({params}) {
+  console.log(params)
   const [showForm, setShowForm] = useState(true);
   const [homepage, setHomepage] = useState(false);
+  const { adminId, posterId } = params;
 
   function onChange(value) {
     setHomepage(true);
@@ -77,7 +79,8 @@ export default function Home() {
                   </button>
                 </div>
               ) : (
-                <Login />
+                // <Login />
+                <>loading..</>
               )}
             </>
           </div>
