@@ -22,6 +22,7 @@ function useMockLogin({ setShowModal, adminId, posterId }) {
     });
     setShowModal(true);
     const data = await res.json();
+    console.log(data);
 
     if (res.ok) {
       console.log("success", data);
