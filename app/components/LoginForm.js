@@ -2,7 +2,8 @@ import { Field, Form, Formik } from "formik";
 import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
 
-function LoginForm({ setShowModal, params }) {
+function LoginForm({ setShowModal, adminId, posterId }) {
+  console.log(adminId, posterId);
   const initialvalues = {
     email: "",
     password: "",
