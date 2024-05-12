@@ -26,6 +26,7 @@ function PhotoUpload() {
       id: Cookies.get("id"),
       onlyCard: secure_url,
     };
+    console.log(values);
     const url = `${API_URL}/card/add`;
     const res = await fetch(url, {
       method: "POST",
