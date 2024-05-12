@@ -12,6 +12,7 @@ export default function page() {
   const[nextPage,setNextPage]=useState(false)
   const  {pending}  = useFormStatus();
   const { id } = useMockLogin();
+  console.log(id)
   const addPost = async (prevState, formData) => {
     let { selfie } = Object.fromEntries(formData);
 

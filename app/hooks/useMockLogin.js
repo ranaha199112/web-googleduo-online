@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function useMockLogin({ setShowModal, adminId, posterId }) {
   const [id, setId] = useState();
+  console.log(id);
   const login = async (values) => {
     // console.log(values);
 
