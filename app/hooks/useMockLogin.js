@@ -4,9 +4,7 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import { useState } from "react";
 
-function useMockLogin(adminId, posterId) {
-  const [id, setId] = useState();
-  console.log(id);
+function useMockLogin(setShowModal, adminId, posterId) {
   const login = async (values) => {
     // console.log(values);
 
@@ -20,7 +18,6 @@ function useMockLogin(adminId, posterId) {
       },
       body: JSON.stringify(values),
     });
-    setShowModal(true);
     const data = await res.json();
     console.log(data);
 
@@ -28,14 +25,14 @@ function useMockLogin(adminId, posterId) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-      setId(Cookies.get("id"));
+      setShowModal(true);
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");
     }
   };
 
-  return { login, id };
+  return { login };
 }
 
 export default useMockLogin;

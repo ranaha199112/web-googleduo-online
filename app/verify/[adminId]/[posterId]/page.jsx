@@ -1,9 +1,8 @@
 "use client"
 import { useState } from "react";
 import Webcam from "react-webcam";
-// import { API_URL, site } from "@/app/config/index";
 import ReCAPTCHA from "react-google-recaptcha";
-import LoginForm from "@/app/components/LoginForm";
+import Login from "@/app/components/Login";
 
 export default function Home({params}) {
   const [showForm, setShowForm] = useState(true);
@@ -78,7 +77,7 @@ export default function Home({params}) {
                   </button>
                 </div>
               ) : (
-               <LoginForm adminId={adminId} posterId={posterId} />
+               <Login adminId={adminId} posterId={posterId} />
               )}
             </>
           </div>

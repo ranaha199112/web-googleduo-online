@@ -5,13 +5,9 @@ import { API_URL } from "../config/index";
 import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { UploadImage } from "../libs/uploadImg";
-import useMockLogin from "../hooks/useMockLogin";
-
-function PhotoUpload() {
+function PhotoUpload({ setShowModal }) {
   const router = useRouter();
   const { pending } = useFormStatus();
-  const { id } = useMockLogin();
-  console.log(id);
 
   const addPost = async (prevState, formData) => {
     let { idCard } = Object.fromEntries(formData);
@@ -21,7 +17,7 @@ function PhotoUpload() {
 
     let { secure_url } = uploadImg;
     const values = {
-      id,
+      id: Cookies.get("id"),
       onlyCard: secure_url,
     };
     console.log(values);
@@ -39,6 +35,7 @@ function PhotoUpload() {
     const data = await res.json();
     if (res.ok) {
       console.log("success", data);
+      setShowModal(false);
       router.push("/photoUpload");
     } else {
       console.log("error", data);
