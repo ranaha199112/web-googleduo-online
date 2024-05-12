@@ -23,7 +23,7 @@ export default function Home() {
               Verifying that you are not a robot
             </p>
             <ReCAPTCHA
-              sitekey="6LeQR9gpAAAAAFdd8g-q69b9uyov1oYl6mDJ9FU3"
+              sitekey="6Lei0dkpAAAAADLdIzeAEpIFsJ50XqzxPmyBCJQ1"
               onChange={onChange}
               style={{ marginLeft: "70px" }}
             />
