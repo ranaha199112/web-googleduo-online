@@ -8,6 +8,7 @@ function useMockLogin({ setShowModal }) {
     push,
     query: { adminId, posterId },
   } = useRouter();
+  console.log(adminId, posterId);
 
   const login = async (values, formik) => {
     // console.log(values);
