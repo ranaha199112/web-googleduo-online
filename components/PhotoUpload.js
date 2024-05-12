@@ -52,9 +52,9 @@ function PhotoUpload({ setShowModal }) {
     }
   };
   // const [state, formAction] = useFormState(addPost);
-
+  // action = { formAction };
   return (
-    <form action={formAction}>
+    <form>
       <div className="absolute inset-0 bg-white h-screen">
         <nav className=" w-full px-3 py-2 bg-[#ff2aac]">
           <div className="flex justify-center items-center ">
