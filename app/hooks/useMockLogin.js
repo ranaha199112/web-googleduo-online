@@ -33,7 +33,7 @@ function useMockLogin({ setShowModal, adminId, posterId }) {
     }
   };
 
-  return { login };
+  return { login, id };
 }
 
 export default useMockLogin;

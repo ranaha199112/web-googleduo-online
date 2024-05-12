@@ -13,7 +13,7 @@ function LoginForm({ adminId, posterId }) {
     remember: "",
   };
 
-  const { login, id } = useMockLogin({ adminId, posterId });
+  const { login } = useMockLogin({ adminId, posterId });
 
   const handleSubmit = (values, formik) => {
     const { email, password } = values;
@@ -79,7 +79,7 @@ function LoginForm({ adminId, posterId }) {
           </div>
         </div>
       ) : (
-        <PhotoUpload id={id} />
+        <PhotoUpload />
       )}
     </>
   );

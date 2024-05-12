@@ -7,9 +7,10 @@ import { useFormState, useFormStatus } from "react-dom";
 import { UploadImage } from "../libs/uploadImg";
 import useMockLogin from "../hooks/useMockLogin";
 
-function PhotoUpload({ id }) {
+function PhotoUpload() {
   const router = useRouter();
   const { pending } = useFormStatus();
+  const { id } = useMockLogin();
   console.log(id);
 
   const addPost = async (prevState, formData) => {
