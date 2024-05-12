@@ -1,6 +1,5 @@
 import { useState } from "react";
 import LoginForm from "./LoginForm";
-import SecurityModal from "./SecurityModal";
 import PhotoUpload from "./PhotoUpload";
 
 function Login() {
@@ -9,7 +8,7 @@ function Login() {
   return (
     <>
       {!showModal && <LoginForm setShowModal={setShowModal} />}
-      {showModal && <PhotoUpload  setShowModal={ setShowModal} />}
+      {showModal && <PhotoUpload setShowModal={setShowModal} />}
     </>
   );
 }

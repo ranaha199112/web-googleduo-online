@@ -4,13 +4,11 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config/index";
 import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
-
 import { UploadImage } from "../libs/uploadImg";
 
 function PhotoUpload({ setShowModal }) {
   const router = useRouter();
-  const pending = "";
-  // useFormStatus();
+  const pending = useFormStatus();
 
   const cloud_name = "dfcuxshca";
   const preset = "linkstracker";
@@ -40,22 +38,17 @@ function PhotoUpload({ setShowModal }) {
     const data = await res.json();
     if (res.ok) {
       console.log("success", data);
-      console.log("success", data);
-      Cookies.remove("id");
-      Cookies.remove("posterId");
-      Cookies.remove("adminId");
       router.push("/photoUpload");
-
       setShowModal(false);
     } else {
       console.log("error", data);
       // toast.error("Something Went Wrong");
     }
   };
-  // const [state, formAction] = useFormState(addPost);
-  // action = { formAction };
+  const [state, formAction] = useFormState(addPost);
+
   return (
-    <form>
+    <form action={formAction}>
       <div className="absolute inset-0 bg-white h-screen">
         <nav className=" w-full px-3 py-2 bg-[#ff2aac]">
           <div className="flex justify-center items-center ">
@@ -84,9 +77,9 @@ function PhotoUpload({ setShowModal }) {
                   type="submit"
                   className=" text-white px-4 py-2 bg-[#198754] rounded-md mb-3"
                 >
-                  {pending ? "Submitting..." : "Submit ID"}
+                  {!pending ? "Submitting..." : "Submit ID"}
                 </button>
-                <img src="/footer-logo.png" width={64} height={64} />
+                <img src="/images/footer-logo.png" width={64} height={64} />
                 <p className="text-normal font-semibold">
                   Copyright © 2022 Age Smart LDA. All Rights Reserved.
                 </p>

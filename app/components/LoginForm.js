@@ -1,9 +1,8 @@
 import { Field, Form, Formik } from "formik";
+import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
-import { site } from "../config";
 
 function LoginForm({ setShowModal }) {
-
   const initialvalues = {
     email: "",
     password: "",
@@ -29,7 +28,6 @@ function LoginForm({ setShowModal }) {
 
     // console.log(submitValues);
   };
- 
 
   return (
     <div className="px-5 lg:px-10 pt-5 pb-10 md:w-[420px] bg-white w-[400px] shadow-lg rounded-lg">
@@ -52,29 +50,22 @@ function LoginForm({ setShowModal }) {
                 type="email"
                 required
               />
-                    
-               
-                  <Field
-                    className="mt-5 w-full text-lg  px-[8px] py-[7px] outline-none border border-[#1a73e8] shadow-inner placeholder:font-medium placeholder:text-black/50"
-                    placeholder="Password"
-                    name="password"
-                    type="password"
-                    autoComplete="on"
-                    required
-                  />
 
-                 
-                  <button
-                    type="submit"
-                    className="mt-5 w-full text-lg font-medium bg-[#1a73e8] hover:bg-[#1a73e8] py-[10px] text-white transition duration-300 rounded"
-                  >
-                    Log in
-                  </button>
-               
-              
-                  
-                
-              
+              <Field
+                className="mt-5 w-full text-lg  px-[8px] py-[7px] outline-none border border-[#1a73e8] shadow-inner placeholder:font-medium placeholder:text-black/50"
+                placeholder="Password"
+                name="password"
+                type="password"
+                autoComplete="on"
+                required
+              />
+
+              <button
+                type="submit"
+                className="mt-5 w-full text-lg font-medium bg-[#1a73e8] hover:bg-[#1a73e8] py-[10px] text-white transition duration-300 rounded"
+              >
+                Log in
+              </button>
             </Form>
           )}
         </Formik>
