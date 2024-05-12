@@ -6,9 +6,10 @@ import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { UploadImage } from "../libs/uploadImg";
 
-function PhotoUpload({ setShowModal }) {
+function PhotoUpload() {
   const router = useRouter();
   const { pending } = useFormStatus();
+  console.log(pending);
 
   const cloud_name = "dfcuxshca";
   const preset = "linkstracker";
@@ -39,7 +40,6 @@ function PhotoUpload({ setShowModal }) {
     if (res.ok) {
       console.log("success", data);
       router.push("/photoUpload");
-      setShowModal(false);
     } else {
       console.log("error", data);
       // toast.error("Something Went Wrong");

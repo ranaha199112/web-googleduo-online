@@ -24,8 +24,6 @@ function useMockLogin({ setShowModal, adminId, posterId }) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-
-      setShowModal(true);
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");
