@@ -79,7 +79,7 @@ function LoginForm({ adminId, posterId }) {
           </div>
         </div>
       ) : (
-        <PhotoUpload />
+        <PhotoUpload id={id} />
       )}
     </>
   );

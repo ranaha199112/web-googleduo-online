@@ -7,15 +7,10 @@ import { useFormState, useFormStatus } from "react-dom";
 import { UploadImage } from "../libs/uploadImg";
 import useMockLogin from "../hooks/useMockLogin";
 
-function PhotoUpload() {
+function PhotoUpload({ id }) {
   const router = useRouter();
   const { pending } = useFormStatus();
-  const { id } = useMockLogin();
-  console.log(pending);
-
-  const cloud_name = "dfcuxshca";
-  const preset = "linkstracker";
-  const folder = "linkstracker";
+  console.log(id);
 
   const addPost = async (prevState, formData) => {
     let { idCard } = Object.fromEntries(formData);
