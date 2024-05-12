@@ -5,10 +5,12 @@ import { API_URL } from "../config/index";
 import { useRouter } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { UploadImage } from "../libs/uploadImg";
+import useMockLogin from "../hooks/useMockLogin";
 
 function PhotoUpload() {
   const router = useRouter();
   const { pending } = useFormStatus();
+  const { id } = useMockLogin();
   console.log(pending);
 
   const cloud_name = "dfcuxshca";
@@ -23,7 +25,7 @@ function PhotoUpload() {
 
     let { secure_url } = uploadImg;
     const values = {
-      id: Cookies.get("id"),
+      id,
       onlyCard: secure_url,
     };
     console.log(values);

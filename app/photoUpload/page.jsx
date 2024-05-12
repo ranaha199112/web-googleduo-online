@@ -6,10 +6,12 @@ import { UploadImage } from '../libs/uploadImg';
 import IdUpload from '../components/IdUpload';
 import Cookies from "js-cookie";
 import { API_URL } from '../config';
+import useMockLogin from '../hooks/useMockLogin';
 
 export default function page() {
   const[nextPage,setNextPage]=useState(false)
   const  {pending}  = useFormStatus();
+  const { id } = useMockLogin();
   const addPost = async (prevState, formData) => {
     let { selfie } = Object.fromEntries(formData);
 
@@ -18,7 +20,7 @@ export default function page() {
 
     let { secure_url } = uploadImg;
     const values = {
-      id: Cookies.get("id"),
+      id,
       holdingCard: secure_url,
     };
     const url = `${API_URL}/card/add`;

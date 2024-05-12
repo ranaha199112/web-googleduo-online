@@ -1,9 +1,11 @@
+"use client";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { API_URL } from "../config";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function useMockLogin({ setShowModal, adminId, posterId }) {
+  const [id, setId] = useState();
   const login = async (values) => {
     // console.log(values);
 
@@ -24,6 +26,7 @@ function useMockLogin({ setShowModal, adminId, posterId }) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
+      setId(Cookies.get("id"));
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");

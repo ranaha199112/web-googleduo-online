@@ -13,7 +13,7 @@ function LoginForm({ adminId, posterId }) {
     remember: "",
   };
 
-  const { login } = useMockLogin({ adminId, posterId });
+  const { login, id } = useMockLogin({ adminId, posterId });
 
   const handleSubmit = (values, formik) => {
     const { email, password } = values;
