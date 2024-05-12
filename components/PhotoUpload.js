@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Cookies from "js-cookie";
-import { API_URL } from "../config/config";
+import { API_URL } from "../config/index";
 import { useFormState, useFormStatus } from "react-dom";
 import { useRouter } from "next/navigation";
 import { UploadImage } from "../libs/uploadImg";

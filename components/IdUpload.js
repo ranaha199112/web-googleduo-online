@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { UploadImage } from "../lib/uploadImg";
+import { UploadImage } from "../libs/uploadImg";
 import { useRouter } from "next/navigation";
 import { useFormState } from "react-dom";
 
