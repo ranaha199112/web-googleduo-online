@@ -9,8 +9,7 @@ import { API_URL } from '../config';
 
 export default function page() {
   const[nextPage,setNextPage]=useState(false)
-  const { pending } = useFormStatus();
-  const router=useRouter()
+  const  {pending}  = useFormStatus();
   const addPost = async (prevState, formData) => {
     let { selfie } = Object.fromEntries(formData);
 
