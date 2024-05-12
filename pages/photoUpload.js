@@ -7,7 +7,9 @@ import { UploadImage } from "../libs/uploadImg";
 
 export default function page() {
   const [nextPage, setNextPage] = useState(false);
-  // const { pending } = useFormStatus();
+  const pending = "";
+
+  // useFormStatus();
   const route = useRouter();
   const addPost = async (prevState, formData) => {
     let { selfie } = Object.fromEntries(formData);
