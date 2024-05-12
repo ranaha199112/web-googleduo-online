@@ -1,7 +1,9 @@
+"use client";
 import { Field, Form, Formik } from "formik";
 import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
 import PhotoUpload from "./PhotoUpload";
+import { useState } from "react";
 
 function LoginForm({ adminId, posterId }) {
   const [showModal, setShowModal] = useState(false);
