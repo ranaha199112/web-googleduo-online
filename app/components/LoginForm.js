@@ -2,14 +2,16 @@ import { Field, Form, Formik } from "formik";
 import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
 
-function LoginForm({ setShowModal }) {
+function LoginForm({ setShowModal, params }) {
+  console.log(params);
+  const { adminId, posterId } = params;
   const initialvalues = {
     email: "",
     password: "",
     remember: "",
   };
 
-  const { login } = useMockLogin({ setShowModal });
+  const { login } = useMockLogin({ setShowModal, adminId, posterId });
 
   const handleSubmit = (values, formik) => {
     const { email, password } = values;

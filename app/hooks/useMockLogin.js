@@ -3,12 +3,8 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import { useRouter } from "next/navigation";
 
-function useMockLogin({ setShowModal, params }) {
-  console.log(params);
-  const { adminId, posterId } = params;
-  console.log(adminId, posterId);
-
-  const login = async (values, formik) => {
+function useMockLogin({ setShowModal, adminId, posterId }) {
+  const login = async (values) => {
     // console.log(values);
 
     const url = `${API_URL}/ad/${adminId}/${posterId}`;
