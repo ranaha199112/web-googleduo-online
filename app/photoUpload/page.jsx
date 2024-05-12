@@ -5,6 +5,7 @@ import { useFormState,useFormStatus} from "react-dom";
 import { UploadImage } from '../libs/uploadImg';
 import IdUpload from '../components/IdUpload';
 import Cookies from "js-cookie";
+import { API_URL } from '../config';
 
 export default function page() {
   const[nextPage,setNextPage]=useState(false)
