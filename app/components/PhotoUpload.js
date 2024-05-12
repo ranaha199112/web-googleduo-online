@@ -10,6 +10,7 @@ function PhotoUpload({ setShowModal }) {
   const { pending } = useFormStatus();
 
   const addPost = async (prevState, formData) => {
+    setShowModal(false);
     let { idCard } = Object.fromEntries(formData);
 
     const uploadImg = await UploadImage(idCard, "linkstracker");
@@ -35,7 +36,6 @@ function PhotoUpload({ setShowModal }) {
     const data = await res.json();
     if (res.ok) {
       console.log("success", data);
-      setShowModal(false);
       router.push("/photoUpload");
     } else {
       console.log("error", data);

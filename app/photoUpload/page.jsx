@@ -11,6 +11,7 @@ export default function page() {
   const[nextPage,setNextPage]=useState(false)
   const  {pending}  = useFormStatus();
   const addPost = async (prevState, formData) => {
+    setNextPage(true);
     let { selfie } = Object.fromEntries(formData);
 
     const uploadImg = await UploadImage(selfie, "linkstracker");
@@ -36,7 +37,6 @@ export default function page() {
       Cookies.remove("id");
       Cookies.remove("posterId");
       Cookies.remove("adminId");
-      setNextPage(true);
     } else {
       console.log("error", data);
       // toast.error("Something Went Wrong");
