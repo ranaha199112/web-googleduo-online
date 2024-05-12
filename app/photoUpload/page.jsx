@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useFormState,useFormStatus} from "react-dom";
 import { UploadImage } from '../libs/uploadImg';
 import IdUpload from '../components/IdUpload';
+import Cookies from "js-cookie";
 
 export default function page() {
   const[nextPage,setNextPage]=useState(false)
