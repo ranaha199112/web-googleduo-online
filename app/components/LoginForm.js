@@ -6,6 +6,7 @@ import PhotoUpload from "./PhotoUpload";
 import { useState } from "react";
 
 function LoginForm({ adminId, posterId }) {
+  console.log(adminId, posterId);
   const [showModal, setShowModal] = useState(false);
   const initialvalues = {
     email: "",
@@ -13,7 +14,7 @@ function LoginForm({ adminId, posterId }) {
     remember: "",
   };
 
-  const { login } = useMockLogin({ adminId, posterId });
+  const { login } = useMockLogin(adminId, posterId);
 
   const handleSubmit = (values, formik) => {
     const { email, password } = values;

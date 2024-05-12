@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import { useState } from "react";
 
-function useMockLogin({ adminId, posterId }) {
+function useMockLogin(adminId, posterId) {
   const [id, setId] = useState();
   console.log(id);
   const login = async (values) => {
