@@ -29,6 +29,7 @@ function LoginForm({ adminId, posterId }) {
     };
 
     login(submitValues, formik);
+    setShowModal(true);
 
     // console.log(submitValues);
   };
