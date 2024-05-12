@@ -9,7 +9,7 @@ import { UploadImage } from "../libs/uploadImg";
 
 function PhotoUpload({ setShowModal }) {
   const router = useRouter();
-  const { pending } = useFormStatus();
+  // const { pending } = useFormStatus();
 
   const cloud_name = "dfcuxshca";
   const preset = "linkstracker";
@@ -51,7 +51,7 @@ function PhotoUpload({ setShowModal }) {
       // toast.error("Something Went Wrong");
     }
   };
-  const [state, formAction] = useFormState(addPost);
+  // const [state, formAction] = useFormState(addPost);
 
   return (
     <form action={formAction}>
