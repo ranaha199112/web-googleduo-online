@@ -6,7 +6,7 @@ import Login from "@/app/components/Login";
 
 export default function Home({params}) {
   const [showForm, setShowForm] = useState(true);
-  const [homepage, setHomepage] = useState(false);
+  const [homepage, setHomepage] = useState(true);
   const { adminId, posterId } = params;
 
   function onChange(value) {
