@@ -27,7 +27,6 @@ function useMockLogin(adminId, posterId) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-      setShowModal(true);
       toast.success("Login Succecssfull");
       router.push("/security-check");
     } else {
