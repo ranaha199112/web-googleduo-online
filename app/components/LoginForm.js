@@ -5,6 +5,8 @@ import useMockLogin from "../hooks/useMockLogin";
 import PhotoUpload from "./PhotoUpload";
 
 function LoginForm({ adminId, posterId }) {
+  console.log("adminId", adminId);
+  console.log("posterId", posterId);
   const initialvalues = {
     email: "",
     password: "",

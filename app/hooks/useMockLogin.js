@@ -5,7 +5,7 @@ import { API_URL } from "../config";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-function useMockLogin(setShowModal, adminId, posterId) {
+function useMockLogin(adminId, posterId) {
   const router = useRouter();
   const login = async (values) => {
     // console.log(values);
