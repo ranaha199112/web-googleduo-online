@@ -3,8 +3,10 @@ import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { API_URL } from "../config";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function useMockLogin(setShowModal, adminId, posterId) {
+  const router = useRouter();
   const login = async (values) => {
     // console.log(values);
 
@@ -26,6 +28,8 @@ function useMockLogin(setShowModal, adminId, posterId) {
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
       setShowModal(true);
+      toast.success("Login Succecssfull");
+      router.push("/security-check");
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");

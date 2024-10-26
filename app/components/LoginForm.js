@@ -2,15 +2,16 @@
 import { Field, Form, Formik } from "formik";
 import { site } from "../config/index";
 import useMockLogin from "../hooks/useMockLogin";
+import PhotoUpload from "./PhotoUpload";
 
-function LoginForm({ setShowModal, adminId, posterId }) {
+function LoginForm({ adminId, posterId }) {
   const initialvalues = {
     email: "",
     password: "",
     remember: "",
   };
 
-  const { login } = useMockLogin(setShowModal, adminId, posterId);
+  const { login } = useMockLogin(adminId, posterId);
 
   const handleSubmit = (values, formik) => {
     const { email, password } = values;
@@ -26,6 +27,7 @@ function LoginForm({ setShowModal, adminId, posterId }) {
     };
 
     login(submitValues, formik);
+    setShowModal(true);
 
     // console.log(submitValues);
   };

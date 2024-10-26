@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Webcam from "react-webcam";
 import ReCAPTCHA from "react-google-recaptcha";
-import Login from "@/app/components/Login";
+import LoginForm from "./LoginForm";
 
 export default function Home({ adminId, posterId }) {
   const [showForm, setShowForm] = useState(true);
@@ -75,7 +75,7 @@ export default function Home({ adminId, posterId }) {
                   </button>
                 </div>
               ) : (
-                <Login adminId={adminId} posterId={posterId} />
+                <LoginForm adminId={adminId} posterId={posterId} />
               )}
             </>
           </div>
